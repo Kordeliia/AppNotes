@@ -5,4 +5,6 @@
     <string name="btn_ad_eliminar">Eliminar</string>
     <string name="btn_ad_cancelar">Cancelar</string>
     <string name="etAdd_error_campo_requerido">Campo requerido.</string>
+    <string name="tv_leyenda_pendientes">Pendientes:</string>
+    <string name="tv_leyenda_terminadas">Terminadas:</string>
 </resources>

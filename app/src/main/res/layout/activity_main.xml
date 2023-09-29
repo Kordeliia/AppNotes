@@ -43,12 +43,30 @@
                 android:layout_marginStart="@dimen/common_padding_default"
                 android:src="@drawable/ic_send"
                 android:layout_gravity="center"
-                android:tint="@color/deep_orange_300"
                 android:background="?attr/selectableItemBackground"
-                />
+                app:tint="@color/deep_orange_300" />
         </LinearLayout>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/common_padding_default"
+            android:text="@string/tv_leyenda_pendientes"
+            android:textColor="@color/deep_orange_300"
+            android:textAppearance="?attr/textAppearanceOverline"/>
         <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/recyclerView"
+            android:id="@+id/rvPendNotes"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:listitem="@layout/item_note"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/common_padding_default"
+            android:text="@string/tv_leyenda_terminadas"
+            android:textColor="@color/deep_orange_300"
+            android:textAppearance="?attr/textAppearanceOverline"/>
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvFinNotes"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             tools:listitem="@layout/item_note"/>

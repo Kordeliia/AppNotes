@@ -24,7 +24,6 @@
         app:layout_constraintBottom_toBottomOf="parent"
         tools:text="Nota"
         android:textColor="@color/deep_orange_300"
-
         android:textAppearance="?attr/textAppearanceListItem"
         />
 
