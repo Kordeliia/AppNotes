@@ -26,6 +26,7 @@ class NoteAdapter(var noteList: MutableList<Note>, private val listener : OnClic
         val note = noteList.get(position)
         holder.setListener(note)
         holder.binding.tvDescription.text = note.description
+        holder.binding.cbFinish.isChecked = note.isFinished
     }
 
     fun add(note: Note) {
