@@ -23,6 +23,7 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="@dimen/common_padding_default"
                 android:layout_weight="100"
+                android:outlineAmbientShadowColor="@color/deep_orange_300"
                 app:counterEnabled="true"
                 app:counterMaxLength="@integer/counter_max_ET"
                 android:hint="@string/hint_TextInputLayout"
@@ -34,7 +35,9 @@
                     android:layout_height="wrap_content"
                     android:maxLength="@integer/counter_max_ET"
                     android:inputType="textCapSentences"
-                    android:imeOptions="actionDone"/>
+                    android:imeOptions="actionDone"
+                    android:textColor="@color/deep_orange_300"
+                    />
             </com.google.android.material.textfield.TextInputLayout>
             <ImageButton
                 android:id="@+id/btnAdd"

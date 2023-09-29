@@ -7,4 +7,6 @@
     <string name="etAdd_error_campo_requerido">Campo requerido.</string>
     <string name="tv_leyenda_pendientes">Pendientes:</string>
     <string name="tv_leyenda_terminadas">Terminadas:</string>
+    <string name="SB_Operacion_exitosa">Operacion exitosa.</string>
+    <string name="SB_Operacion_fallida">Operacion fallida.</string>
 </resources>

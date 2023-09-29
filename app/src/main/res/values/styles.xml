@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="TextLabel" parent="TextAppearance.AppCompat">
+        <!-- Hint color and label color in FALSE state -->
+        <item name="android:textColorHint">@color/deep_orange_300</item>
+        <item name="android:textSize">20sp</item>
+        <!-- Label color in TRUE state and bar color FALSE and TRUE State -->
+        <item name="colorAccent">@color/deep_orange_300</item>
+        <item name="colorControlNormal">@color/deep_orange_300</item>
+        <item name="colorControlActivated">@color/deep_orange_300</item>
+    </style>
+</resources>

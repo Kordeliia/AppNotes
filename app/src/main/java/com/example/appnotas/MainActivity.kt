@@ -5,6 +5,7 @@ import android.os.Bundle
 import androidx.appcompat.app.AlertDialog
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.appnotas.databinding.ActivityMainBinding
+import com.google.android.material.snackbar.Snackbar
 
 class MainActivity : AppCompatActivity(), OnClickListener {
     private lateinit var binding : ActivityMainBinding
@@ -28,10 +29,17 @@ class MainActivity : AppCompatActivity(), OnClickListener {
         }
         binding.btnAdd.setOnClickListener {
             if(binding.etAddNote.text.toString().isNotBlank()){
-                val note = Note((notesAdapter.itemCount + 1).toLong(),
-                    binding.etAddNote.text.toString().trim())
-                addNoteAuto(note)
-                binding.etAddNote.text?.clear()
+                val note = Note(description = binding.etAddNote.text.toString().trim())
+                note.id = database.insertNote(note)
+                if(note.id != Constants.ID_ERROR){
+                    addNoteAuto(note)
+                    binding.etAddNote.text?.clear()
+                    showMssg(R.string.SB_Operacion_exitosa)
+                    Snackbar.make(binding.root,
+                        getString(R.string.SB_Operacion_exitosa), Snackbar.LENGTH_SHORT).show()
+                } else {
+                    showMssg(R.string.SB_Operacion_fallida)
+                }
             }
             else{
                 binding.etAddNote.error = getString(R.string.etAdd_error_campo_requerido)
@@ -44,24 +52,34 @@ class MainActivity : AppCompatActivity(), OnClickListener {
         getData()
     }
     private fun getData(){
-        val data = mutableListOf(
-            Note(1, "Tarea 1"),
-            Note(2, "Tarea 2"))
+       // val data = mutableListOf(
+        //    Note(1, "Tarea 1"),
+        //    Note(2, "Tarea 2"))
+        val data = database.getAllNotes()
         data.forEach{note ->
             addNoteAuto(note)
         }
     }
 
     override fun onChecked(note: Note) {
-        deleteNoteAuto(note)
-        addNoteAuto(note)
+        if(database.updateNote(note)){
+            deleteNoteAuto(note)
+            addNoteAuto(note)
+        } else{
+            showMssg(R.string.SB_Operacion_fallida)
+        }
     }
 
     override fun onLongClick(note: Note, currentAdapter : NoteAdapter) {
         val builder = AlertDialog.Builder(this)
             .setTitle(getString(R.string.Alert_dialog_delete))
-            .setPositiveButton(getString(R.string.btn_ad_eliminar)) { dialogInterface, i ->
-                currentAdapter.remove(note)
+            .setPositiveButton(getString(R.string.btn_ad_eliminar)) { _, _ ->
+                if(database.deleteNote(note)){
+                    currentAdapter.remove(note)
+                    showMssg(R.string.SB_Operacion_exitosa)
+                } else{
+                    showMssg(R.string.SB_Operacion_fallida)
+                }
             }
             .setNegativeButton(getString(R.string.btn_ad_cancelar), null)
         builder.create().show()
@@ -80,7 +98,9 @@ class MainActivity : AppCompatActivity(), OnClickListener {
             notesFinAdapter.remove(note)
         }
     }
-
+    private fun showMssg(msgRes : Int){
+        Snackbar.make(binding.root, getString(msgRes), Snackbar.LENGTH_SHORT).show()
+    }
 }
 
 
