@@ -4,4 +4,5 @@
     <string name="Alert_dialog_delete">¿Quiere realmente eliminar la nota?</string>
     <string name="btn_ad_eliminar">Eliminar</string>
     <string name="btn_ad_cancelar">Cancelar</string>
+    <string name="etAdd_error_campo_requerido">Campo requerido.</string>
 </resources>

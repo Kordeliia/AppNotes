@@ -26,6 +26,10 @@ class MainActivity : AppCompatActivity(), OnClickListener {
                 val note = Note((noteAdapter.itemCount + 1).toLong(),
                     binding.etAddNote.text.toString().trim())
                 addNoteAuto(note)
+                binding.etAddNote.text?.clear()
+            }
+            else{
+                binding.etAddNote.error = getString(R.string.etAdd_error_campo_requerido)
             }
         }
     }
