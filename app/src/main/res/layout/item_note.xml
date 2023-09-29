@@ -9,9 +9,11 @@
         android:id="@+id/cbFinish"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:buttonTint="@color/teal_300"
         app:layout_constraintBaseline_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
+        android:outlineAmbientShadowColor="@color/deep_orange_300"
         />
     <TextView
         android:id="@+id/tvDescription"
@@ -22,6 +24,7 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
         tools:text="Nota"
+        android:textColor="@color/deep_orange_300"
         android:paddingTop="@dimen/common_padding_default"
         android:textAppearance="?attr/textAppearanceListItem"
         />

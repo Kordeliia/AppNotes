@@ -1,8 +1,17 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
     <style name="Base.Theme.AppNotas" parent="Theme.Material3.DayNight">
-        <!-- Customize your light theme here. -->
-        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+        <item name = "colorPrimary">@color/red_pink_500</item>
+        <item name = "colorPrimaryVariant">@color/red_pink_700</item>
+        <item name = "colorOnPrimary">@color/white</item>
+        <item name = "colorSecondary">@color/teal_500</item>
+        <item name = "colorSecondaryVariant">@color/teal_700</item>
+        <item name = "colorOnSecondary">@color/white</item>
+        <item name = "android:colorBackground">@color/deep_orange_900</item>
+        <item name = "colorSurface">@color/deep_orange_300</item>
+        <item name = "colorOnSurface">@color/white</item>
+        <item name = "colorOnBackground">@color/white</item>
+
     </style>
 
     <style name="Theme.AppNotas" parent="Base.Theme.AppNotas" />
