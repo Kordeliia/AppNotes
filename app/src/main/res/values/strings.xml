@@ -1,4 +1,7 @@
 <resources>
     <string name="app_name">AppNotas</string>
     <string name="hint_TextInputLayout">Escribe tu nueva nota</string>
+    <string name="Alert_dialog_delete">¿Quiere realmente eliminar la nota?</string>
+    <string name="btn_ad_eliminar">Eliminar</string>
+    <string name="btn_ad_cancelar">Cancelar</string>
 </resources>

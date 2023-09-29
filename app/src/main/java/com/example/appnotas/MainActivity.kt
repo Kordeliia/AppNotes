@@ -2,6 +2,7 @@ package com.example.appnotas
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AlertDialog
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.appnotas.databinding.ActivityMainBinding
 
@@ -30,10 +31,21 @@ class MainActivity : AppCompatActivity(), OnClickListener {
     }
 
     override fun onLongClick(note: Note) {
+        deleteNoteAuto(note)
     }
     private fun addNoteAuto(note: Note) {
         noteAdapter.add(note)
     }
+    private fun deleteNoteAuto(note: Note) {
+        val builder = AlertDialog.Builder(this)
+            .setTitle(getString(R.string.Alert_dialog_delete))
+            .setPositiveButton(getString(R.string.btn_ad_eliminar)) { dialogInterface, i ->
+                noteAdapter.remove(note)
+            }
+            .setNegativeButton(getString(R.string.btn_ad_cancelar), null)
+        builder.create().show()
+    }
+
 }
 
 
