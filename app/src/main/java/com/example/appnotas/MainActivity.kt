@@ -10,11 +10,12 @@ class MainActivity : AppCompatActivity(), OnClickListener {
     private lateinit var binding : ActivityMainBinding
     private lateinit var notesAdapter : NoteAdapter
     private lateinit var notesFinAdapter : NoteAdapter
+    private lateinit var database : DataBaseHelper
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
-
+        database = DataBaseHelper(this)
         notesAdapter = NoteAdapter(mutableListOf(), this)
         binding.rvPendNotes.apply {
             layoutManager = LinearLayoutManager(this@MainActivity)
