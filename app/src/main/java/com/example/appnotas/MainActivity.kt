@@ -20,8 +20,20 @@ class MainActivity : AppCompatActivity(), OnClickListener {
             layoutManager = LinearLayoutManager(this@MainActivity)
             adapter = noteAdapter
         }
+        binding.btnAdd.setOnClickListener {
+            if(binding.etAddNote.text.toString().isNotBlank()){
+                val note = Note((noteAdapter.itemCount + 1).toLong(),
+                    binding.etAddNote.text.toString().trim())
+                addNoteAuto(note)
+            }
+        }
     }
 
     override fun onLongClick(note: Note) {
     }
+    private fun addNoteAuto(note: Note) {
+        noteAdapter.add(note)
+    }
 }
+
+

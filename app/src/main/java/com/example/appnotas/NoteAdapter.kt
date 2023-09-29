@@ -20,4 +20,9 @@ class NoteAdapter(var noteList: MutableList<Note>, private val listener : OnClic
         val note = noteList.get(position)
         holder.binding.tvDescription.text = note.description
     }
+
+    fun add(note: Note) {
+        noteList.add(note)
+        notifyDataSetChanged()
+    }
 }
