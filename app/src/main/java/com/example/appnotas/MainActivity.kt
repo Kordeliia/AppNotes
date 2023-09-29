@@ -56,11 +56,11 @@ class MainActivity : AppCompatActivity(), OnClickListener {
         addNoteAuto(note)
     }
 
-    override fun onLongClick(note: Note) {
+    override fun onLongClick(note: Note, currentAdapter : NoteAdapter) {
         val builder = AlertDialog.Builder(this)
             .setTitle(getString(R.string.Alert_dialog_delete))
             .setPositiveButton(getString(R.string.btn_ad_eliminar)) { dialogInterface, i ->
-                deleteNoteAuto(note)
+                currentAdapter.remove(note)
             }
             .setNegativeButton(getString(R.string.btn_ad_cancelar), null)
         builder.create().show()

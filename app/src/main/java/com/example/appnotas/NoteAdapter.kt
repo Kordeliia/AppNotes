@@ -20,7 +20,7 @@ class NoteAdapter(var noteList: MutableList<Note>, private val listener : OnClic
                 listener.onChecked(note)
             }
             binding.root.setOnLongClickListener {
-                listener.onLongClick(note)
+                listener.onLongClick(note, this@NoteAdapter)
                 true
             }
         }
