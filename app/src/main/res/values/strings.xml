@@ -9,4 +9,5 @@
     <string name="tv_leyenda_terminadas">Terminadas:</string>
     <string name="SB_Operacion_exitosa">Operacion exitosa.</string>
     <string name="SB_Operacion_fallida">Operacion fallida.</string>
+    <string name="btnAdd_enviar_datos">Boton enviar datos</string>
 </resources>

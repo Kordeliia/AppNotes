@@ -18,7 +18,6 @@
             android:padding="@dimen/common_padding_default"
             >
             <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/tilAddNote"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_margin="@dimen/common_padding_default"
@@ -28,7 +27,8 @@
                 app:counterMaxLength="@integer/counter_max_ET"
                 android:hint="@string/hint_TextInputLayout"
                 app:hintTextAppearance="?attr/textAppearanceBody1"
-                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense">
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+                tools:targetApi="p">
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/etAddNote"
                     android:layout_width="match_parent"
@@ -39,15 +39,18 @@
                     android:textColor="@color/deep_orange_300"
                     />
             </com.google.android.material.textfield.TextInputLayout>
+
             <ImageButton
                 android:id="@+id/btnAdd"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/common_padding_default"
-                android:src="@drawable/ic_send"
                 android:layout_gravity="center"
+                android:layout_marginStart="@dimen/common_padding_default"
                 android:background="?attr/selectableItemBackground"
-                app:tint="@color/deep_orange_300" />
+                android:src="@drawable/ic_send"
+                app:tint="@color/deep_orange_300"
+                tools:ignore="SpeakableTextPresentCheck"
+                android:contentDescription="@string/btnAdd_enviar_datos"/>
         </LinearLayout>
         <TextView
             android:layout_width="match_parent"
